@@ -22,7 +22,7 @@ const Navbar = () => {
                 </ul>
                 <div className="flex space-x-5">
                     <button>Sign In</button>
-                    <button className="btn bg-[#d91b7e] text-white rounded-full">Sign Up</button>
+                    <button className="btn brand-gradient-bg text-white rounded-full">Sign Up</button>
                 </div>
             </div>
         </div>
