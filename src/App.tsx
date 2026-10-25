@@ -13,6 +13,7 @@ const Techfetch = async (): Promise<Technology[]> => {
 
 function App() {
 const [technologiesPromise] = useState<Promise<Technology[]>>(Techfetch()); 
+const [selectedTechnologies, setSelectedTechnologies] = useState<Technology[]>([]);
 
 
   return (
@@ -20,7 +21,7 @@ const [technologiesPromise] = useState<Promise<Technology[]>>(Techfetch());
       <Navbar />
       <Hero />
       <Suspense fallback={<div>Loading...</div>}>
-        <TechnologyCards technologiesPromise={technologiesPromise} />
+        <TechnologyCards technologiesPromise={technologiesPromise} selectedTechnologies={selectedTechnologies} setSelectedTechnologies={setSelectedTechnologies} />
       </Suspense>
     </>
   )
