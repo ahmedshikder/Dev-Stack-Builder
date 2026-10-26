@@ -16,17 +16,21 @@ const YourStack = ({ selectedTechnologies, setSelectedTechnologies }: YourStackP
         toast.success("All technologies removed from your stack!");
     }
     return (
-        <div className="group rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 ease-in-out ">
+        <div className="group rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 lg:mt-39">
             <div>
                 <h2 className="text-xl font-bold">Your Stack</h2>
-                <p>
+                <p className="mt-2 text-sm">
                     {selectedTechnologies.length > 0 ? `${selectedTechnologies.length} technologies selected` : "No technologies selected yet."}
                 </p>
             </div>
             <div>
-                <p> {selectedTechnologies.length === 0 ? "Your Stack is empty." : ""} </p>
+                {selectedTechnologies.length === 0 ? (
+                    <div className="mt-4 rounded-xl border border-dashed border-gray-200 px-4 py-6 text-center text-sm text-gray-400">
+                        Your Stack is empty.
+                    </div>
+                ) : null}
                 {selectedTechnologies.map((selected) => (
-                    <div key={selected.id} className="flex items-center gap-3 rounded-xl border border-gray-200 p-3">
+                    <div key={selected.id} className="mt-2 flex items-center gap-3 rounded-xl border border-gray-200 px-3 py-2">
                         <div className="h-14 w-14 p-3">
                             <img src={selected.icon} alt="" />
                         </div>
@@ -49,7 +53,7 @@ const YourStack = ({ selectedTechnologies, setSelectedTechnologies }: YourStackP
                     >
                         Remove All
                     </button>
-                : ""}
+                    : ""}
             </div>
         </div>
     );

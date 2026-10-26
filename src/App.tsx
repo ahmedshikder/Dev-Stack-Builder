@@ -23,7 +23,7 @@ function App() {
       <Navbar />
       <Hero />
       <Suspense fallback={<div>Loading...</div>}>
-        <div className="container mx-auto mt-10 grid grid-cols-1 gap-8 lg:grid-cols-[2fr_1fr]">
+        <div className="container mx-auto mt-10 grid grid-cols-1 gap-8 lg:grid-cols-[4fr_1fr]">
           <TechnologyCards technologiesPromise={technologiesPromise} selectedTechnologies={selectedTechnologies} setSelectedTechnologies={setSelectedTechnologies} />
           <YourStack selectedTechnologies={selectedTechnologies} setSelectedTechnologies={setSelectedTechnologies} />
         </div>

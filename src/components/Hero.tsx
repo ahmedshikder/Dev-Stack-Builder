@@ -6,7 +6,7 @@ const Hero = () => {
             <div className='flex flex-col items-start gap-5'>
                 <h1 className='text-5xl font-bold mt-10'>Build Your Ideal
                     <span className="brand-gradient-text"> Development Stack</span></h1>
-                <p className='mt-5'>Explore frontend, backend, database, and tooling options,
+                <p className='mt-5 text-gray-500'>Explore frontend, backend, database, and tooling options,
                     compare them side by side, and put together the stack that fits your
                     next project.</p>
                 <div>
