@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import type { Technology } from './Types/technology'
 import TechnologyCards from './components/TechnologyCards'
 import YourStack from './components/YourStack'
+import Footer from './components/Footer'
 
 const Techfetch = async (): Promise<Technology[]> => {
   const response = await fetch('/technologies.json')
@@ -27,7 +28,7 @@ function App() {
           <YourStack selectedTechnologies={selectedTechnologies} setSelectedTechnologies={setSelectedTechnologies} />
         </div>
       </Suspense>
-
+      <Footer />
     </>
   )
 }
