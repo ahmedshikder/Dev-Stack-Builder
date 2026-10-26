@@ -47,3 +47,7 @@ Conditional rendering shows UI only when a condition is true. I used it to show 
 ### 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
 
 A parent passes data through props. A child can call a function passed in props to ask the parent to update its state. In this project, `TechnologyCards` and `YourStack` use the `selectedTechnologies` data and `setSelectedTechnologies` function from `App`.
+
+## 🚀 Live Demo
+
+**[View Dev Stack Builder](https://quiet-heliotrope-04c544.netlify.app)**
