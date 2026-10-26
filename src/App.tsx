@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import Navbar from './components/Navbar'
 import type { Technology } from './Types/technology'
 import TechnologyCards from './components/TechnologyCards'
+import YourStack from './components/YourStack'
 
 const Techfetch = async (): Promise<Technology[]> => {
   const response = await fetch('/technologies.json')
@@ -12,8 +13,8 @@ const Techfetch = async (): Promise<Technology[]> => {
 }
 
 function App() {
-const [technologiesPromise] = useState<Promise<Technology[]>>(Techfetch()); 
-const [selectedTechnologies, setSelectedTechnologies] = useState<Technology[]>([]);
+  const [technologiesPromise] = useState<Promise<Technology[]>>(Techfetch());
+  const [selectedTechnologies, setSelectedTechnologies] = useState<Technology[]>([]);
 
 
   return (
@@ -21,8 +22,12 @@ const [selectedTechnologies, setSelectedTechnologies] = useState<Technology[]>([
       <Navbar />
       <Hero />
       <Suspense fallback={<div>Loading...</div>}>
-        <TechnologyCards technologiesPromise={technologiesPromise} selectedTechnologies={selectedTechnologies} setSelectedTechnologies={setSelectedTechnologies} />
+        <div className="container mx-auto mt-10 grid grid-cols-1 gap-8 lg:grid-cols-[2fr_1fr]">
+          <TechnologyCards technologiesPromise={technologiesPromise} selectedTechnologies={selectedTechnologies} setSelectedTechnologies={setSelectedTechnologies} />
+          <YourStack selectedTechnologies={selectedTechnologies} setSelectedTechnologies={setSelectedTechnologies} />
+        </div>
       </Suspense>
+
     </>
   )
 }
